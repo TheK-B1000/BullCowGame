@@ -28,12 +28,15 @@ void PlayGame()
 		GetGuess();
 		// repeat the guess back to them
 		std::cout << "Your guess was: " << Guess << std::endl;
+		std::cout << std::endl;
 	}
 
 }
 
 bool PlayAgain()
 {
+	FBullCowGame BCGame; // Instantiate a new state
+
 	std::cout << "Do you want to play again? (y/n)\n";
 	std::string Response = "";
 	std::getline(std::cin, Response);
@@ -54,6 +57,6 @@ std::string GetGuess()
 void PrintIntro()
 {
 	constexpr int WORD_LENGTH = 5;
-	std::cout << "Hello World!\n";
+	std::cout << "Hello World!\n" << std::endl;
 	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram?\n" << std::endl;
 }

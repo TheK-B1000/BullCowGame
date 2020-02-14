@@ -2,6 +2,7 @@
 
 void FBullCowGame::Reset()
 {
+	return;
 }
 
 int FBullCowGame::GetMaxTries()
