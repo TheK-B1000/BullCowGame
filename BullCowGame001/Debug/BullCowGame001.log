@@ -1,5 +1,2 @@
-﻿  FBullCowGame.cpp
-  Main.cpp
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(37,15): warning C4101: 'BCGame': unreferenced local variable
-  Generating Code...
+﻿  Main.cpp
   BullCowGame001.vcxproj -> C:\Users\TheK-B1000\source\repos\BullCowGame001\Debug\BullCowGame001.exe

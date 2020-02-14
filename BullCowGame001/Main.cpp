@@ -38,6 +38,7 @@ void PlayGame()
 bool PlayAgain()
 {
 	std::cout << "Do you want to play again? (y/n)\n";
+	std::cout << std::endl;
 	std::string Response = "";
 	std::getline(std::cin, Response);
 	return (Response[0] == 'y' || Response[0] == 'Y');

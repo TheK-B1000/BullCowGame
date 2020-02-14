@@ -5,12 +5,12 @@ class FBullCowGame
 {
 public:
 	void Reset(); // TODO make a more rich return value
-	int GetMaxTries(); // Get max tries
-	int GetCurrentTry(); // Get current try?
-	bool IsGameWon(); // Is the game over?
+	int GetMaxTries() const; // Get max tries
+	int GetCurrentTry() const; // Get current try?
+	bool IsGameWon() const; // Is the game over?
 	bool CheckGuessValidity(std::string); // Does guess match correct answer and TODO make a more rich return value
 
 private:
-	int MyCurrentTry;
-	int MyMaxTries;
+	int MyCurrentTry = 1;
+	int MyMaxTries = 5;
 };
