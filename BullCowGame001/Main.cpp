@@ -24,6 +24,7 @@ void PlayGame()
 {
 	BCGame.Reset();
 	const int MaxTries = BCGame.GetMaxTries();
+	int CurrentTry = BCGame.GetCurrentTry();
 
 	// loop for the number of turns asking for guesses
 	for (int count = 1; count <= MaxTries; count++)
@@ -34,7 +35,7 @@ void PlayGame()
 		std::cout << std::endl;
 	}
 
-	// TODO add a game summary
+	std::cout << "You beat the game with " << MaxTries - CurrentTry << " left!\n" << std::endl;
 }
 
 bool PlayAgain()
@@ -49,8 +50,7 @@ bool PlayAgain()
 std::string GetGuess()
 {
 	int CurrentTry = BCGame.GetCurrentTry();
-
-	// Get a guess from the player
+		// Get a guess from the player
 	std::cout << "This is try " << CurrentTry << ". Enter your guess: ";
 	std::string Guess = "";
 	std::getline(std::cin, Guess);
