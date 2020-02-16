@@ -1,16 +1,23 @@
+// This is a console executable, that makes use of the Bull Cow Class.
+// This acts as the view in a MVC pattern, and is responsible for all user interaction.
+// For game logic see FBullCowGame class.
+
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
 
 void PrintIntro();
-std::string GetGuess();
+Ftext GetGuess();
 void PlayGame();
 bool PlayAgain();
+
+using FText = std::string;
+using int32 = int;
 
 FBullCowGame BCGame; // Instantiate a new state
 
 // The entry point of our application
-int main() 
+int32 main() 
 {
 	do {
 		PrintIntro();
@@ -23,13 +30,13 @@ int main()
 void PlayGame()
 {
 	BCGame.Reset();
-	const int MaxTries = BCGame.GetMaxTries();
-	int CurrentTry = BCGame.GetCurrentTry();
+	const int32 MaxTries = BCGame.GetMaxTries();
+	int32 CurrentTry = BCGame.GetCurrentTry();
 
 	// loop for the number of turns asking for guesses
-	for (int count = 1; count <= MaxTries; count++)
+	for (int32 count = 1; count <= MaxTries; count++)
 	{
-		std::string Guess = GetGuess();
+		FText Guess = GetGuess();
 		// repeat the guess back to them
 		std::cout << "Your guess was: " << Guess << std::endl;
 		std::cout << std::endl;
@@ -41,18 +48,19 @@ void PlayGame()
 bool PlayAgain()
 {
 	std::cout << "Do you want to play again? (y/n)\n";
-	std::string Response = "";
+	FText Response = "";
 	std::getline(std::cin, Response);
 	return (Response[0] == 'y' || Response[0] == 'Y');
 
 }
 
-std::string GetGuess()
+std::FText GetGuess()
 {
-	int CurrentTry = BCGame.GetCurrentTry();
-		// Get a guess from the player
+	int32 CurrentTry = BCGame.GetCurrentTry();
+	// Get a guess from the player
+	// TODO Validate Guess
 	std::cout << "This is try " << CurrentTry << ". Enter your guess: ";
-	std::string Guess = "";
+	FText Guess = "";
 	std::getline(std::cin, Guess);
 	return Guess;
 
@@ -61,7 +69,9 @@ std::string GetGuess()
 
 void PrintIntro()
 {
-	constexpr int WORD_LENGTH = 5;
+	constexpr int32 WORD_LENGTH = 5;
 	std::cout << "Hello World!\n" << std::endl;
 	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram?\n" << std::endl;
+
+	// TODO make intro ASC
 }
