@@ -6,13 +6,13 @@
 #include <string>
 #include "FBullCowGame.h"
 
-void PrintIntro();
-Ftext GetGuess();
-void PlayGame();
-bool PlayAgain();
-
 using FText = std::string;
 using int32 = int;
+
+void PrintIntro();
+FText GetGuess();
+void PlayGame();
+bool PlayAgain();
 
 FBullCowGame BCGame; // Instantiate a new state
 
@@ -42,7 +42,7 @@ void PlayGame()
 		std::cout << std::endl;
 	}
 
-	std::cout << "You beat the game with " << MaxTries - CurrentTry << " left!\n" << std::endl;
+	std::cout << "You beat the game with " << MaxTries - CurrentTry << " tries left!\n" << std::endl;
 }
 
 bool PlayAgain()
@@ -54,7 +54,7 @@ bool PlayAgain()
 
 }
 
-std::FText GetGuess()
+	FText GetGuess()
 {
 	int32 CurrentTry = BCGame.GetCurrentTry();
 	// Get a guess from the player
@@ -69,7 +69,7 @@ std::FText GetGuess()
 
 void PrintIntro()
 {
-	constexpr int32 WORD_LENGTH = 5;
+	constexpr int32 WORD_LENGTH = 6;
 	std::cout << "Hello World!\n" << std::endl;
 	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram?\n" << std::endl;
 

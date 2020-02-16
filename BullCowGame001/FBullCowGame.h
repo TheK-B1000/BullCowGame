@@ -4,6 +4,12 @@
 using FString = std::string;
 using int32 = int;
 
+struct BullCowCount
+{
+	int Bulls = 0;
+	int Cows = 0;
+};
+
 class FBullCowGame
 {
 public:
@@ -14,10 +20,12 @@ public:
 	int32 GetCurrentTry() const; // Get current try?
 
 	bool IsGameWon() const; // Is the game over?
-	bool CheckGuessValidity(std::FString; // Does guess match correct answer and TODO make a more rich return value
+	bool CheckGuessValidity(FString); // Does guess match correct answer and TODO make a more rich return value
 	// provide a method for counting Bulls & Cows, increasing turn #
+	BullCowCount SubmitValidGuess(FString);
 
 private:
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
+	FString MyHiddenWord;
 };
