@@ -4,6 +4,8 @@
 class FBullCowGame
 {
 public:
+	FBullCowGame(); // Constructor
+
 	void Reset(); // TODO make a more rich return value
 	int GetMaxTries() const; // Get max tries
 	int GetCurrentTry() const; // Get current try?
@@ -11,6 +13,6 @@ public:
 	bool CheckGuessValidity(std::string); // Does guess match correct answer and TODO make a more rich return value
 
 private:
-	int MyCurrentTry = 1;
-	int MyMaxTries = 5;
+	int MyCurrentTry;
+	int MyMaxTries;
 };

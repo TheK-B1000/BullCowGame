@@ -22,7 +22,8 @@ int main()
 
 void PlayGame()
 {
-	int MaxTries = BCGame.GetMaxTries();
+	BCGame.Reset();
+	const int MaxTries = BCGame.GetMaxTries();
 
 	// loop for the number of turns asking for guesses
 	for (int count = 1; count <= MaxTries; count++)
@@ -33,12 +34,12 @@ void PlayGame()
 		std::cout << std::endl;
 	}
 
+	// TODO add a game summary
 }
 
 bool PlayAgain()
 {
 	std::cout << "Do you want to play again? (y/n)\n";
-	std::cout << std::endl;
 	std::string Response = "";
 	std::getline(std::cin, Response);
 	return (Response[0] == 'y' || Response[0] == 'Y');
