@@ -10,7 +10,7 @@ struct FBullCowCount
 	int Cows = 0;
 };
 
-enum class EWordStatus
+enum class EGuessStatus
 {
 	OK,
 	Not_Isogram,
@@ -29,7 +29,7 @@ public:
 	int32 GetHiddenWordLength() const; // Get Hidden Word Length
 
 	bool IsGameWon() const; // Is the game over?
-	EWordStatus CheckGuessValidity(FString) const; // Does guess match correct answer and TODO make a more rich return value
+	EGuessStatus CheckGuessValidity(FString) const; // Does guess match correct answer and TODO make a more rich return value
 	// provide a method for counting Bulls & Cows, increasing turn #
 	FBullCowCount SubmitValidGuess(FString);
 

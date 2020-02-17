@@ -1,4 +1,5 @@
 #include "FBullCowGame.h"
+#include <iostream>
 
 using FText = std::string;
 using int32 = int;
@@ -28,9 +29,28 @@ bool FBullCowGame::IsGameWon() const
 	return false;
 }
 
-EWordStatus FBullCowGame::CheckGuessValidity(FString) const
+EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	return EWordStatus::OK; // TODO make actual error
+	if (false) // if the guess is not an isogram
+	{
+		return EGuessStatus::Not_Isogram;
+	}
+	else if (false) // if the guess is not all lowercase
+	{
+		return EGuessStatus::Not_Lowercase;
+	}
+	else if (Guess.length() != GetHiddenWordLength())// if the guess is not the right length
+	{
+		std::cout << "Try again! Your guess has to be " << GetHiddenWordLength() << " characters long!\n" << std::endl;
+		return EGuessStatus::Wrong_Length;
+
+	}
+	// otherwise
+	else
+	{
+		return EGuessStatus::OK;
+	}
+
 }
 
 // recieves a VALID guess, incriments turn, and returns count
@@ -45,7 +65,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 	// loop through all letters in the guess
 	int32 MyHiddenWordLength = MyHiddenWord.length();
 
-	for (int32 MHWChar = 0; MHWChar < MyHiddenWordLength; MHWChar++)
+	for (int32 MHWChar = 0; MHWChar < MyHiddenWordLength; MHWChar++) // TODO change from FOR to WHILE loop
 	{
 		// compare letters against the hidden 
 		for (int32 GChar = 0; GChar < MyHiddenWordLength; GChar++)
