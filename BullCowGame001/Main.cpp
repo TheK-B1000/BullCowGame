@@ -74,9 +74,9 @@ bool PlayAgain()
 
 void PrintIntro()
 {
-	constexpr int32 WORD_LENGTH = 6;
+	const int32 WordLength = BCGame.GetHiddenWordLength();
 	std::cout << "Hello World!\n" << std::endl;
-	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram?\n" << std::endl;
+	std::cout << "Can you guess the " << WordLength << " letter isogram?\n" << std::endl;
 
 	// TODO make intro ASC
 }
