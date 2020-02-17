@@ -41,7 +41,6 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}
 	else if (Guess.length() != GetHiddenWordLength())// if the guess is not the right length
 	{
-		std::cout << "Try again! Your guess has to be " << GetHiddenWordLength() << " characters long!\n" << std::endl;
 		return EGuessStatus::Wrong_Length;
 
 	}

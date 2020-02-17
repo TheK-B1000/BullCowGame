@@ -1,2 +1,2 @@
-﻿  FBullCowGame.cpp
-  BullCowGame001.vcxproj -> C:\Users\TheK-B1000\source\repos\BullCowGame001\Debug\BullCowGame001.exe
+﻿  Main.cpp
+C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(55,3): error C2059: syntax error: '}'
