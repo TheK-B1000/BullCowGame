@@ -1,8 +1,14 @@
+/*
+	FBullCowGame cpp file. Holds the definitions of the header file classes 
+*/
+
+#pragma once
 #include "FBullCowGame.h"
 #include <iostream>
 #include <map>
-#define TMap std::map
 
+// To make syntax Unreal friendly
+#define TMap std::map 
 using FText = std::string;
 using int32 = int;
 
@@ -24,7 +30,7 @@ void FBullCowGame::Reset()
 {
 	MyCurrentTry = 1;
 	bGameIsWon = false;
-	const FString HIDDEN_WORD = "ape";
+	const FString HIDDEN_WORD = "ape"; // This MUST be an Isogram
 	MyHiddenWord = HIDDEN_WORD;
 
 	return;
