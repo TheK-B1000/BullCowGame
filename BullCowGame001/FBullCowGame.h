@@ -24,13 +24,13 @@ class FBullCowGame
 public:
 	FBullCowGame(); // Constructor
 
-	void Reset(); // TODO make a more rich return value
-	int32 GetMaxTries() const; // Get max tries
-	int32 GetCurrentTry() const; // Get current try?
-	int32 GetHiddenWordLength() const; // Get Hidden Word Length
+	void Reset(); 
+	int32 GetMaxTries() const;
+	int32 GetCurrentTry() const; 
+	int32 GetHiddenWordLength() const; 
 
-	bool IsGameWon() const; // Is the game over?
-	EGuessStatus CheckGuessValidity(FString) const; // Does guess match correct answer and TODO make a more rich return value
+	bool IsGameWon() const;
+	EGuessStatus CheckGuessValidity(FString) const; 
 	// provide a method for counting Bulls & Cows, increasing turn #
 	FBullCowCount SubmitValidGuess(FString);
 
@@ -41,4 +41,5 @@ private:
 	bool bGameIsWon;
 
 	bool IsIsogram(FString Word) const;
+	bool IsLowercase(FString Word) const;
 };
