@@ -78,7 +78,6 @@ void PlayGame()
 			// assume the guess is valid
 			break;
 		}
-		std::cout << std::endl;
 	} while (Status != EGuessStatus::OK); // keep looping until we get no errors
 	return Guess;
 }
@@ -86,11 +85,30 @@ void PlayGame()
 
 void PrintIntro()
 {
-	const int32 WordLength = BCGame.GetHiddenWordLength();
-	std::cout << "Hello World!\n" << std::endl;
+	const int32 WordLength = BCGame.GetHiddenWordLength();														   
+	std::cout << "																		  \n ";
+	std::cout << "             (      )													  \n ";
+	std::cout << "             ~(^^^^)~													  \n ";
+	std::cout << "              ) @@ \~_          |\									  \n ";
+	std::cout << "             /     | \        \~ /									  \n ";
+	std::cout << "            ( 0  0  ) \        | |       Hello						  \n ";
+	std::cout << "             ---___/~  \       | |           Welcome					  \n ";
+	std::cout << "              /'__/ |   ~-_____/ |                 To 				  \n ";
+	std::cout << "          _   ~----~      ___---~		      Bull 			  \n "; 
+	std::cout << " O       //     |         |				 Cow!		  \n ";
+	std::cout << "        ((~\  _|         -|                Oops! I mean MOOOOOOO		  \n ";
+	std::cout << "  o  O //-_ \/ |        ~  |											  \n ";
+	std::cout << "       ^   \_ /         ~  |											  \n ";
+	std::cout << "              |          ~ |											  \n ";
+	std::cout << "              |     /     ~ |											  \n ";
+	std::cout << "              |     (       |											  \n ";
+	std::cout << "               \     \      /\                    -The Cow-				  \n ";
+	std::cout << "              / -_____-\   \ ~~-*										  \n ";
+	std::cout << "              |  /       \  \       .==.								  \n ";
+	std::cout << "              / /         / /       |  |								  \n ";
+	std::cout << "            /~  |      //~  |       |__|								  \n " << std::endl;
 	std::cout << "Can you guess the " << WordLength << " letter isogram?\n" << std::endl;
 
-	// TODO make intro ASC11
 }
 
 
