@@ -59,7 +59,7 @@ void PlayGame()
 	do
 	{
 		int32 CurrentTry = BCGame.GetCurrentTry();
-		std::cout << "This is try " << CurrentTry << ". Enter your guess: ";
+		std::cout << "This is try " << CurrentTry <<  " out of " << BCGame.GetMaxTries() << ". " << "Enter your guess: ";
 
 		std::getline(std::cin, Guess);
 		Status = BCGame.CheckGuessValidity(Guess);

@@ -6,9 +6,13 @@
 using FText = std::string;
 using int32 = int;
 
-FBullCowGame::FBullCowGame() { Reset(); }
+FBullCowGame::FBullCowGame() { Reset(); } // default Constructor 
 
-int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; }
+int32 FBullCowGame::GetMaxTries() const 
+{
+	TMap<int32, int32> WorldLengthMaxTries{ {3, 5}, {4, 6}, {5, 10}, {6, 16}, {7, 20}, {8, 24} };
+	return WorldLengthMaxTries[MyHiddenWord.length()];
+}
 
 int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; }
 
@@ -18,8 +22,6 @@ bool FBullCowGame::IsGameWon() const { return bGameIsWon; }
 
 void FBullCowGame::Reset()
 {
-	constexpr int32 MAX_TRIES = 4;
-	MyMaxTries = MAX_TRIES;
 	MyCurrentTry = 1;
 	bGameIsWon = false;
 	const FString HIDDEN_WORD = "ape";
