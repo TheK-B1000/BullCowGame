@@ -40,5 +40,5 @@ private:
 	FString MyHiddenWord;
 	bool bGameIsWon;
 
-	bool IsIsogram() const;
+	bool IsIsogram(FString Word) const;
 };

@@ -30,7 +30,7 @@ void FBullCowGame::Reset()
 
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	if (!IsIsogram()) // if the guess is not an isogram
+	if (!IsIsogram(Guess)) // if the guess is not an isogram
 	{
 		return EGuessStatus::Not_Isogram;
 	}
@@ -96,14 +96,26 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 	return FBullCowCount;
 }
 
-bool FBullCowGame::IsIsogram() const
+bool FBullCowGame::IsIsogram(FString Word) const
 {
 	// treat 0 and 1 letters as isograms
-	// loop through all the letters of the word
-	// if the letter is in the map
-		// we do NOT have an isogram
-	// otherwise
-		// add the letter to the map as seen
+	if (Word.length() <= 1) { return true; }
 
+	TMap<char, bool> LetterSeen; // setup map
+	for (auto Letter : Word) // for all the letters of the word
+	{
+		Letter = tolower(Letter); // handle mixed case
+		for (int Letter = 0; Letter < Word.length(); Letter++)
+		{
+			if (LetterSeen[Letter])
+			{
+				return false;
+			}
+			else
+			{
+				LetterSeen[Letter] = true;
+			}
+		}
+	}
 	return true; // for example in cases where /0 is entered
 }
