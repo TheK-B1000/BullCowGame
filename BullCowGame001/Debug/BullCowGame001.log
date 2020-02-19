@@ -1,14 +1,2 @@
-﻿  Main.cpp
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(92,15): warning C4129: '~': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(92,15): warning C4129: '	': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(93,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(93,15): warning C4129: '~': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(94,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(95,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(99,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(100,15): warning C4129: '/': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(101,15): warning C4129: '_': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(105,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(106,15): warning C4129: ' ': unrecognized character escape sequence
-C:\Users\TheK-B1000\source\repos\BullCowGame001\BullCowGame001\Main.cpp(107,15): warning C4129: ' ': unrecognized character escape sequence
+﻿  FBullCowGame.cpp
   BullCowGame001.vcxproj -> C:\Users\TheK-B1000\source\repos\BullCowGame001\Debug\BullCowGame001.exe

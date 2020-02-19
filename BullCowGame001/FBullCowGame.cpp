@@ -62,13 +62,8 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 // recieves a VALID guess, incriments turn, and returns count
 FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 {
-	// incriment the turn number
 	MyCurrentTry++;
-
-	// setup a return variable
 	FBullCowCount FBullCowCount;
-
-	// loop through all letters in the HiddenWord
 	int32 WordLength = MyHiddenWord.length(); // assuming same length as guess
 
 	for (int32 MHWChar = 0; MHWChar < WordLength; MHWChar++) // TODO change from FOR to WHILE loop
@@ -82,12 +77,10 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 				//  if they're in the same place
 				if (MHWChar == GChar)
 				{
-					// incriment bulls
 					FBullCowCount.Bulls++;
 				}
 				else
 				{
-					// incriment cows if not
 					FBullCowCount.Cows++;
 				}
 			}
@@ -112,17 +105,14 @@ bool FBullCowGame::IsIsogram(FString Word) const
 	TMap<char, bool> LetterSeen; // setup map
 	for (auto Letter : Word) // for all the letters of the word
 	{
-		for (int Letter = 0; Letter < Word.length(); Letter++)
+		Letter = tolower(Letter); // handle mixed case
+		if (LetterSeen[Letter]) // if the letter is in mapp
 		{
-			Letter = tolower(Letter); // handle mixed case
-			if (LetterSeen[Letter])
-			{
-				return false;
-			}
-			else
-			{
-				LetterSeen[Letter] = true;
-			}
+			return false; // we do NOT have an isogram
+		}
+		else
+		{
+			LetterSeen[Letter] = true; // add the letter to the map
 		}
 	}
 	return true; // for example in cases where /0 is entered
@@ -136,10 +126,6 @@ bool FBullCowGame::IsLowercase(FString Word) const
 		{
 			return false;
 		}
-		else
-		{
-			return true;
-		}
 	}
-	return false;
+	return true;
 }
